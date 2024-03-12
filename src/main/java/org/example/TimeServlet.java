@@ -23,7 +23,7 @@ public class TimeServlet extends HttpServlet {
     public void init() throws ServletException {
         engine = new TemplateEngine();
         FileTemplateResolver resolver = new FileTemplateResolver();
-        resolver.setPrefix("C:\\Users\\user\\IdeaProjects\\Servlet\\src\\main\\webapp\\WEB-INF\\templates\\");
+        resolver.setPrefix(getServletContext().getRealPath("/WEB-INF/templates/"));
         resolver.setSuffix(".html");
         resolver.setTemplateMode("HTML5");
         resolver.setOrder(engine.getTemplateResolvers().size());
